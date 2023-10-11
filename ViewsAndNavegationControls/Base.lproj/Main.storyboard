@@ -137,8 +137,8 @@
         <!--Item 2-->
         <scene sceneID="lJV-rZ-UuA">
             <objects>
-                <viewController id="B37-9l-pSF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gkr-1a-up5">
+                <viewController storyboardIdentifier="vcGreen" id="B37-9l-pSF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gkr-1a-up5" customClass="I">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="dhg-tx-Wb5"/>
@@ -148,12 +148,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2s0-Yv-E9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10" y="1582"/>
+            <point key="canvasLocation" x="1279" y="980"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="8oa-59-gv9">
             <objects>
-                <viewController id="a5I-nv-WHb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcBlue" id="a5I-nv-WHb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nIo-RU-JRP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +164,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="na2-Tn-Hr3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10" y="819"/>
+            <point key="canvasLocation" x="1280" y="1800"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="bMg-8U-TVA">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="M1H-H6-Ke5" customClass="PageViewController" customModule="ViewsAndNavegationControls" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="nTQ-sB-f01"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQv-oK-BdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51" y="1218"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0zS-Gu-Dyg">
@@ -177,9 +187,8 @@
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="a5I-nv-WHb" kind="relationship" relationship="viewControllers" id="RxX-Ix-5ER"/>
-                        <segue destination="B37-9l-pSF" kind="relationship" relationship="viewControllers" id="uDJ-Pm-pLs"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Ota-XL-vCD"/>
+                        <segue destination="M1H-H6-Ke5" kind="relationship" relationship="viewControllers" id="yNB-cJ-Dqx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQj-d6-WrN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
