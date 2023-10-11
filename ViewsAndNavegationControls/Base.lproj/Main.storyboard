@@ -137,14 +137,40 @@
         <!--Item 2-->
         <scene sceneID="lJV-rZ-UuA">
             <objects>
-                <viewController storyboardIdentifier="vcGreen" id="B37-9l-pSF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcGreen" id="B37-9l-pSF" customClass="GreenViewController" customModule="ViewsAndNavegationControls" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gkr-1a-up5" customClass="I">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LHn-BT-x3D">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="B37-9l-pSF" id="DI4-rX-dBW"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6S-zU-vyA">
+                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dhg-tx-Wb5"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="LHn-BT-x3D" firstAttribute="top" secondItem="dhg-tx-Wb5" secondAttribute="top" id="0iC-yZ-eyK"/>
+                            <constraint firstItem="M6S-zU-vyA" firstAttribute="centerY" secondItem="gkr-1a-up5" secondAttribute="centerY" id="CDT-d3-IlF"/>
+                            <constraint firstAttribute="trailing" secondItem="LHn-BT-x3D" secondAttribute="trailing" id="f5z-Kw-B8y"/>
+                            <constraint firstItem="M6S-zU-vyA" firstAttribute="centerX" secondItem="gkr-1a-up5" secondAttribute="centerX" id="n21-IS-ibb"/>
+                            <constraint firstItem="LHn-BT-x3D" firstAttribute="leading" secondItem="dhg-tx-Wb5" secondAttribute="leading" id="tcc-bA-wOo"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="c3q-tA-jDY"/>
+                    <connections>
+                        <outlet property="myLabel" destination="M6S-zU-vyA" id="VCR-qm-acH"/>
+                        <outlet property="mySearchBar" destination="LHn-BT-x3D" id="4I3-eN-Q2P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2s0-Yv-E9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
