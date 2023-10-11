@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,13 +21,31 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObF-ab-Tvv">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1400"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-6i-SsH">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="800"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1400"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Bk-WX-QHB">
+                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASJ-oQ-lDw">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="400" id="Ayk-YP-XNP"/>
+                                                        </constraints>
+                                                        <standardMapConfiguration key="preferredConfiguration"/>
+                                                    </mapView>
+                                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2NF-SC-vS9">
+                                                        <rect key="frame" x="0.0" y="400" width="393" height="400"/>
+                                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="400" id="1NH-xr-i98"/>
+                                                        </constraints>
+                                                        <wkWebViewConfiguration key="configuration">
+                                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                            <wkPreferences key="preferences"/>
+                                                        </wkWebViewConfiguration>
+                                                    </wkWebView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Bk-WX-QHB">
+                                                        <rect key="frame" x="0.0" y="800" width="393" height="200"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-1O-Puw">
                                                                 <rect key="frame" x="184" y="99" width="393" height="2"/>
@@ -53,17 +72,19 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="FTi-E6-AWZ" firstAttribute="leading" secondItem="3Bk-WX-QHB" secondAttribute="leading" constant="99" id="08n-TT-7tA"/>
-                                                            <constraint firstAttribute="height" constant="400" id="0tB-pz-wwJ"/>
+                                                            <constraint firstAttribute="height" constant="200" id="0tB-pz-wwJ"/>
                                                             <constraint firstItem="FTi-E6-AWZ" firstAttribute="top" secondItem="3Bk-WX-QHB" secondAttribute="top" constant="20" id="IiG-bR-6fb"/>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="VpZ-Xa-3hR"/>
                                                             <constraint firstItem="rIp-oj-lwN" firstAttribute="centerX" secondItem="3Bk-WX-QHB" secondAttribute="centerX" id="WqV-Dt-EWH"/>
                                                             <constraint firstItem="FTi-E6-AWZ" firstAttribute="top" secondItem="3Bk-WX-QHB" secondAttribute="top" constant="20" id="ZKv-En-dfn"/>
                                                             <constraint firstItem="FTi-E6-AWZ" firstAttribute="centerX" secondItem="rIp-oj-lwN" secondAttribute="centerX" id="c3p-V3-5Wj"/>
                                                             <constraint firstItem="FTi-E6-AWZ" firstAttribute="centerX" secondItem="3Bk-WX-QHB" secondAttribute="centerX" id="ibo-u1-cEg"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="ovS-n3-JUu"/>
                                                             <constraint firstItem="rIp-oj-lwN" firstAttribute="top" secondItem="FTi-E6-AWZ" secondAttribute="bottom" constant="33" id="xw8-Oe-ufa"/>
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImage" translatesAutoresizingMaskIntoConstraints="NO" id="aDQ-86-LFG">
-                                                        <rect key="frame" x="0.0" y="400" width="393" height="400"/>
+                                                        <rect key="frame" x="0.0" y="1000" width="393" height="400"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="400" id="RGW-Il-TZR"/>
                                                         </constraints>
@@ -102,7 +123,9 @@
                     <connections>
                         <outlet property="myButton" destination="rIp-oj-lwN" id="qPM-4l-xRd"/>
                         <outlet property="myImage" destination="aDQ-86-LFG" id="Cql-5N-AMB"/>
+                        <outlet property="myMap" destination="ASJ-oQ-lDw" id="asT-ef-UhG"/>
                         <outlet property="myView" destination="3Bk-WX-QHB" id="hKo-ei-2ee"/>
+                        <outlet property="myWebView" destination="2NF-SC-vS9" id="Cc8-Y3-idR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
